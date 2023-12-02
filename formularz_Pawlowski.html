@@ -1,45 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-    <title>Formularz Pracy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankieta Sportowa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
-<<body bgcolor="#00AF78">>
-    <left><h1>Formularz Pracy</h1>
-    <form action="przetwarzanie.php" method="post">
+<body>
 
-    <left><h1>jeżeli chcesz pracować w naszym zakładzie pracy musisz wypełnić formularz</h1>
-    <form action="przetwarzanie.php" method="post">
-	
-	<font size="4" color="blue"<label for="płeć">Płeć:</label>
-        <input type="text" id="płeć" name="płeć" required><br><br>
+<h1>Ankieta Sportowa</h1>
 
-        <font size="4" color="blue"<label for="imie">Imię:</label>
-        <input type="text" id="imie" name="imie" required><br><br>
+<form action="przetwarzanie_ankiety_sportowej.php" method="post">
 
-        <font size=4" color="blue"<label for="nazwisko">Nazwisko:</label>
-        <input type="text" id="nazwisko" name="nazwisko" required><br><br>
+    <label for="imie">Imię:</label>
+    <input type="text" id="imie" name="imie" required>
 
-        <font size="4" color="blue"<label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
+    <label for="email">Adres e-mail:</label>
+    <input type="email" id="email" name="email" required>
 
-        <font size="4" color="blue"<label for="cv">CV (PDF):</label>
-        <input type="file" id="cv" name="cv" accept=".pdf" required><br><br>
+    <label for="ulubiony-sport">Ulubiony sport:</label>
+    <select id="ulubiony-sport" name="ulubiony-sport" required>
+        <option value="piłka-nożna">Piłka nożna</option>
+        <option value="koszykówka">Koszykówka</option>
+        <option value="biegi">Biegi</option>
+        <option value="pływanie">Pływanie</option>
+        <option value="inne">Inne</option>
+    </select>
 
-        <font size="4" color="blue"<label for="wiadomosc">Wiadomość:</label><br>
-        <textarea id="wiadomosc" name="wiadomosc" rows="4" cols="50" required></textarea><br><br>
+    <label for="najlepsza-druzyna">Najlepsza drużyna/kraj w wybranym sporcie:</label>
+    <input type="text" id="najlepsza-druzyna" name="najlepsza-druzyna">
 
-	<left><h1>Jeżeli masz jakieś problemy skontaktuj się z nami:</h1>
-        <form action="przetwarzanie.php" method="post">
+    <label for="ulubiony-zawodnik">Ulubiony zawodnik:</label>
+    <input type="text" id="ulubiony-zawodnik" name="ulubiony-zawodnik">
 
-	<left><h1>EmkaZakładpracy@gmail.com</h1>
-        <form action="przetwarzanie.php" method="post">
+    <label>Czy uprawiasz jakiś sport regularnie?</label>
+    <input type="radio" id="tak" name="uprawia-sport" value="tak" required>
+    <label for="tak">Tak</label>
+    <input type="radio" id="nie" name="uprawia-sport" value="nie">
+    <label for="nie">Nie</label>
 
-	<left><h1>+48 690 211 402</h1>
-        <form action="przetwarzanie.php" method="post">
+    <label for="ulubiona-dyscyplina-olimpijska">Ulubiona dyscyplina olimpijska:</label>
+    <select id="ulubiona-dyscyplina-olimpijska" name="ulubiona-dyscyplina-olimpijska" required>
+        <option value="lekkoatletyka">Lekkoatletyka</option>
+        <option value="pływanie">Pływanie</option>
+        <option value="łyżwiarstwo">Łyżwiarstwo</option>
+        <option value="inna">Inna</option>
+    </select>
 
+    <label for="ocena-zdrowia">Jak oceniasz swoje zdrowie ogólne na skali od 1 do 10, gdzie 1 to bardzo złe, a 10 to doskonałe?</label>
+    <input type="range" id="ocena-zdrowia" name="ocena-zdrowia" min="1" max="10" step="1" value="5">
 
-        <input type="submit" value="Wyślij">
-    </form>
+    <label>Twoje uwagi dotyczące ankiety:</label>
+    <textarea id="uwagi" name="uwagi" rows="4" cols="50"></textarea>
+
+    <button type="submit">Prześlij ankietę</button>
+
+</form>
 		 <li><A HREF="https://DawidPawlowski12.github.io/szkolaa/index.html"> powrót do strony głównej</A> <br> </li>
 </body>
 </html>
